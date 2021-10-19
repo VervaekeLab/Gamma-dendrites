@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="expTwoSynapseActIE">
+
+ 	
+    	<expTwoSynapseActIE id="expTwoSynapseActIE" tauRise="0.2ms" tauDecay="1ms" gbase="1nS" erev="0mV" delay="50ms" duration="10000ms"/>
+
+
+    	<ComponentType name="expTwoSynapseActIE"
+                   extends="baseConductanceBasedSynapse"
+                   description="Ohmic synapse model whose conductance waveform on receiving an event has a rise time of _tauRise and a decay time of _tauDecay. Max conductance reached during this time (assuming zero conductance before) is _gbase * _weight.">
+
+        <Property name="weight" dimension="none" defaultValue="1"/> 
+        
+        <Parameter name="tauRise" dimension="time" />
+        <Parameter name="tauDecay" dimension="time" />
+        <Parameter name="delay" dimension="time" description="Delay before synapse is activated."/>
+        <Parameter name="duration" dimension="time" description="Duration for activation"/>
+
+        <DerivedParameter name="peakTime" dimension="time" value="log(tauDecay / tauRise) * (tauRise * tauDecay)/(tauDecay - tauRise)"/>
+        <DerivedParameter name="waveformFactor" dimension="none" value="1 / (-exp(-peakTime / tauRise) + exp(-peakTime / tauDecay))"/>
+
+        <Dynamics>
+            
+            <StateVariable name="active" dimension="none"/>
+            
+            <StateVariable name="A" dimension="none"/>
+            <StateVariable name="B" dimension="none"/>
+
+            <!-- TODO: catch tauRise = 0..! -->
+
+            <DerivedVariable name="g" dimension="conductance" exposure="g" value="gbase * (B - A)" />
+            <DerivedVariable name="i" exposure="i" dimension="current" value="g * (erev - v)" />
+
+            <TimeDerivative variable="A" value="-A / tauRise" />
+            <TimeDerivative variable="B" value="-B / tauDecay" />
+
+            <OnStart>
+                <StateAssignment variable="A" value="0" />
+                <StateAssignment variable="B" value="0" />
+            </OnStart>
+
+            <OnEvent port="in">
+                <StateAssignment variable="A" value="A + (active * weight * waveformFactor)" />
+                <StateAssignment variable="B" value="B + (active * weight * waveformFactor)" />
+            </OnEvent>
+            
+            
+            <OnCondition test="t .lt. delay">
+                <StateAssignment variable="active" value="0"/>
+            </OnCondition>
+
+            <OnCondition test="t .geq. delay .and. t .lt. duration + delay">
+                <StateAssignment variable="active" value="1"/>
+            </OnCondition>
+
+            <OnCondition test="t .geq. duration + delay">
+                <StateAssignment variable="active" value="0"/>
+            </OnCondition>
+            
+        </Dynamics>
+    </ComponentType>
+</neuroml>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Na_BC">
+
+
+    <ionChannel id="Na_BC" conductance="10pS" type="ionChannelHH" species="non_specific">
+
+        <notes>adapted from: 
+	"Cerebellum Golgi Cell Model
+        Na transient channel
+	Gutfreund parametrization
+   
+	Author: E.DAngelo, T.Nieus, A. Fontana
+	Last revised: 8.5.2000"
+	
+	to match Na dynamics as in net_hh_w.mod by I. Vida, Nov 2000	
+	adapted by: Birgit Kriener
+	Last revised: 13.2.2017</notes>
+                
+
+        <gate id="m" type="gateHHInstantaneous" instances="3">
+            <steadyState type="Na_BC"/>
+        </gate>
+
+        <gate id="h" type="gateHHrates" instances="1">
+            <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="6.3 degC"/>
+            <forwardRate type="HHExpRate" rate="0.35per_ms" scale="-20mV" midpoint="-58mV"/>
+            <reverseRate type="HHSigmoidRate" rate="5per_ms" scale="10mV" midpoint="-28mV"/>
+        </gate>
+                            
+    </ionChannel>
+        
+    <ComponentType name="Na_BC" extends="baseVoltageDepVariable">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        
+        <Constant name="Aalpha_m" dimension="none" value="0.1"/>
+        <Constant name="Kalpha_m" dimension="none" value="-10"/>
+        <Constant name="V0alpha_m" dimension="none" value="-35"/>
+        
+        <Constant name="Abeta_m" dimension="none" value="4"/>
+        <Constant name="Kbeta_m" dimension="none" value="-18"/>
+        <Constant name="V0beta_m" dimension="none" value="-60"/>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            
+            <DerivedVariable name="x_" dimension="none" value="V-V0alpha_m"/>
+            <DerivedVariable name="y_" dimension="none" value="Kalpha_m"/>
+            
+            <DerivedVariable name="alp_m" dimension="none" value="Aalpha_m * x_/(1 - exp(x_/y_))"/>
+            
+            <DerivedVariable name="bet_m" dimension="none" value="Abeta_m * exp((V-V0beta_m)/Kbeta_m)"/>
+            
+            <DerivedVariable name="x" exposure="x" dimension="none" value="alp_m/(alp_m + bet_m)"/>
+        </Dynamics>
+
+    </ComponentType>
+
+
+</neuroml>

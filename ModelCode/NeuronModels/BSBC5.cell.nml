@@ -1,0 +1,95 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="BSBC5">
+    <include href="../SimEx/channelConvert/pas.channel.nml"></include>
+    <include href="../SimEx/channelConvert/Na_BC.channel.nml"></include>
+    <include href="../SimEx/channelConvert/K_BC.channel.nml"></include>
+    <cell id="BSBC5">
+        <notes>Cell: Cell0 exported from NEURON ModelView</notes>
+        <morphology id="morphology_Golgi">
+            <segment id="0" name="Soma">
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="25.0"/>
+                <distal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="25.0"/>
+            </segment>
+            <segment id="1" name="dend1">
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="1.0"/>
+                <distal x="3.000000e+02" y="0.000000e+00" z="0.000000e+00" diameter="1.0"/>
+            </segment>
+            <segment id="2" name="dend2">
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="1.0"/>
+                <distal x="0.000000e+00" y="3.000000e+02" z="0.000000e+00" diameter="1.0"/>
+            </segment>
+            <segment id="3" name="dend3">
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="1.0"/>
+                <distal x="-2.121320e+02" y="-2.121320e+02" z="0.000000e+00" diameter="1.0"/>
+            </segment>
+            <segment id="4" name="dend4">
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="1.0"/>
+                <distal x="2.121320e+02" y="-2.121320e+02" z="0.000000e+00" diameter="1.0"/>
+            </segment>
+            <segment id="5" name="dend5">
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="1.0"/>
+                <distal x="2.121320e+02" y="2.121320e+02" z="0.000000e+00" diameter="1.0"/>
+            </segment>
+            <segmentGroup neuroLexId="sao864921383" id="Soma">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="dend_1">
+                <property tag="numberInternalDivisions" value="10"/>
+                <member segment="1"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="dend_2">
+                <property tag="numberInternalDivisions" value="10"/>
+                <member segment="2"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="dend_3">
+                <property tag="numberInternalDivisions" value="10"/>
+                <member segment="3"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="dend_4">
+                <property tag="numberInternalDivisions" value="10"/>
+                <member segment="4"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="dend_5">
+                <property tag="numberInternalDivisions" value="10"/>
+                <member segment="5"/>
+            </segmentGroup>
+            <segmentGroup id="all">
+                <include segmentGroup="Soma"/>
+                <include segmentGroup="dend_1"/>
+                <include segmentGroup="dend_2"/>
+                <include segmentGroup="dend_3"/>
+                <include segmentGroup="dend_4"/>
+                <include segmentGroup="dend_5"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0043025" id="soma_group">
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0030425" id="dendrite_group">
+                <include segmentGroup="dend_1"/>
+                <include segmentGroup="dend_2"/>
+                <include segmentGroup="dend_3"/>
+                <include segmentGroup="dend_4"/>
+                <include segmentGroup="dend_5"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="biophys">
+            <membraneProperties>
+                <channelDensity id="pas_chan_soma" segmentGroup="soma_group" ionChannel="pas" condDensity="0.16 mS_per_cm2" erev="-75.0 mV" ion="non_specific"/>
+		<channelDensity id="pas_chan_dend" segmentGroup="dendrite_group" ionChannel="pas" condDensity="0.079 mS_per_cm2" erev="-75.0 mV" ion="non_specific"/>	
+                <channelDensity id="na_chan_soma" ionChannel="Na_BC" condDensity="80.0 mS_per_cm2" erev="55.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+		<channelDensity id="k_chan_soma" ionChannel="K_BC" condDensity="20.0 mS_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+                <channelDensity id="k_chan_dend" ionChannel="K_BC" condDensity="20.0 mS_per_cm2" erev="-90.0 mV" segmentGroup="dendrite_group" ion="non_specific"/>
+                <spikeThresh value="0.0 mV"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+                <initMembPotential value="-65.0 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="100.0 ohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>

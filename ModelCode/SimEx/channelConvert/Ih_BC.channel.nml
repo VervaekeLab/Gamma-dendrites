@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Ih">
+
+
+    <ionChannel id="Ih" conductance="10pS" type="ionChannelHH" species="non_specific">
+
+        <notes> Original version from model published in paper:
+		Factors mediating powerful voltage attenuation along CA1 dendrites (2006)
+		NL Golding, TJ Mickus, WL Kath, N Spruston
+		J Physiol ...
+  	        COMMENT
+		"ih.mod
+		Hyperpolarization-activated channel; mixed cation current; Hodgkin-Huxley style kinetics.  
+                Based on results from Magee, 1998. (J. Neurosci. 18(19):7613-7624. 1 October, 1998.
+
+		Authors: Tim Mickus, Bill Kath, Nelson Spruston: Northwestern University, 2000.
+		Modification of original Iq model by Nelson Spruston, used in Stuart and Spruston, 1998.
+		That file was originally modified from one provided by Michele Migliore.
+
+		Modified 8/16/02 to work with CVODE (one day, I hope) - Nelson"
+		ENDCOMMENT
+
+	
+		adapted by: Birgit Kriener
+		Last revised: 10.3.2017
+	</notes>
+ 
+                
+
+        <gate id="hh" type="gateHHratesTau" instances="1">
+            <q10Settings type="q10ExpTemp" q10Factor="4.5" experimentalTemp="33.0 degC"/>
+            <forwardRate type="HHExpRate" rate="0.00057per_ms" scale="-9.42mV" midpoint="-81mV"/>
+            <reverseRate type="HHExpRate" rate="0.00057per_ms" scale="6.28mV" midpoint="-81mV"/>
+	    <timeCourse type="Ih_tau_tau" />
+        </gate>
+                            
+    </ionChannel>
+        
+    <ComponentType name="Ih_tau_tau" extends="baseVoltageDepTime">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <Requirement name="alpha" dimension="per_time"/>
+        <Requirement name="beta" dimension="per_time"/>
+        <Requirement name="rateScale" dimension="none"/>
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="ALPHA" dimension="none" value="alpha * TIME_SCALE"/>
+            <DerivedVariable name="BETA" dimension="none" value="beta * TIME_SCALE"/>
+            <ConditionalDerivedVariable name="t" exposure="t" dimension="time">
+		<Case condition="(ALPHA + BETA) .eq. 0" value="( 0 ) * TIME_SCALE"/>
+                <Case condition="1/( (ALPHA + BETA) * rateScale ) .lt. (2.0)" value="(2.0) * TIME_SCALE"/>
+                <Case value="( 1/(ALPHA + BETA) ) * TIME_SCALE"/>
+            </ConditionalDerivedVariable>		
+        </Dynamics>
+
+    </ComponentType>
+
+
+</neuroml>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  ../Schemas/NeuroML2/NeuroML_v2beta5.xsd"
+         id="AMPANMDA">
+
+   
+    <expTwoSynapse id="AMPA" gbase="2nS" erev="0mV" tauRise="0.2ms" tauDecay="2ms" >
+    </expTwoSynapse>
+
+    <blockingPlasticSynapse id="NMDA" gbase="0.44nS"
+			    erev="0mV" tauRise="3ms" tauDecay="70ms">
+        <blockMechanism type="voltageConcDepBlockMechanism" species="mg" blockConcentration="0.3 mM"
+			scalingConc="1.1 mM" scalingVolt="12.5 mV"/>
+    </blockingPlasticSynapse>
+   
+    <doubleSynapse id="AMPANMDA" synapse1="AMPA" synapse1Path="./AMPA" synapse2="NMDA" synapse2Path="./NMDA">
+        <notes>A single "synapse" which contains both AMPA and NMDA. It is planned that the need for extra synapse1Path/synapse2Path attributes can be removed in later versions.</notes>
+    </doubleSynapse> 
+
+</neuroml>

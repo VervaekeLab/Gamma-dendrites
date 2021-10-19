@@ -1,0 +1,442 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.15 (libNeuroML v0.2.18)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim_myrunfrq0ict0"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="../NeuronModels/jonasnmBC2Klt.cell.nml"/>
+    <Include file="../SimEx/channelConvert/pas.channel.nml"/>
+    <Include file="../SimEx/channelConvert/Na_BC.channel.nml"/>
+    <Include file="../SimEx/channelConvert/K_BClt.channel.nml"/>
+    <Include file="../SimEx/channelConvert/K_BC40act.channel.nml"/>
+    <Include file="../SimEx/channelConvert/Ih_BC.channel.nml"/>
+    <Include file="myrunfrq0ict0.net.nml"/>
+    <Include file="../NeuronModels/jonasnmBC2Klt.cell.nml"/>
+    <Include file="../SimEx/channelConvert/pas.channel.nml"/>
+    <Include file="../SimEx/channelConvert/Na_BC.channel.nml"/>
+    <Include file="../SimEx/channelConvert/K_BClt.channel.nml"/>
+    <Include file="../SimEx/channelConvert/K_BC40act.channel.nml"/>
+    <Include file="../SimEx/channelConvert/Ih_BC.channel.nml"/>
+    <Include file="./synapseNML/expTwoSynapseAct.nml"/>
+   
+    <Simulation id="Sim_myrunfrq0ict0" length="500ms" step="0.025ms" target="myrunfrq0ict0" seed="2049">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="display_bc" title="Voltages Basket Cells" timeScale="1ms" xmin="-50.0" xmax="550.0" ymin="-80" ymax="40">
+            <Line id="MF 0: Vm" quantity="BasketCells/0/jonasnmBC2Klt/v" scale="1mV" color="#3db9dd" timeScale="1ms"/>
+            <Line id="MF 1: Vm" quantity="BasketCells/1/jonasnmBC2Klt/v" scale="1mV" color="#593cf8" timeScale="1ms"/>
+            <Line id="MF 2: Vm" quantity="BasketCells/2/jonasnmBC2Klt/v" scale="1mV" color="#201fca" timeScale="1ms"/>
+            <Line id="MF 3: Vm" quantity="BasketCells/3/jonasnmBC2Klt/v" scale="1mV" color="#08c0ab" timeScale="1ms"/>
+            <Line id="MF 4: Vm" quantity="BasketCells/4/jonasnmBC2Klt/v" scale="1mV" color="#e053af" timeScale="1ms"/>
+            <Line id="MF 5: Vm" quantity="BasketCells/5/jonasnmBC2Klt/v" scale="1mV" color="#c29d47" timeScale="1ms"/>
+            <Line id="MF 6: Vm" quantity="BasketCells/6/jonasnmBC2Klt/v" scale="1mV" color="#648b17" timeScale="1ms"/>
+            <Line id="MF 7: Vm" quantity="BasketCells/7/jonasnmBC2Klt/v" scale="1mV" color="#f93eb7" timeScale="1ms"/>
+            <Line id="MF 8: Vm" quantity="BasketCells/8/jonasnmBC2Klt/v" scale="1mV" color="#f59060" timeScale="1ms"/>
+            <Line id="MF 9: Vm" quantity="BasketCells/9/jonasnmBC2Klt/v" scale="1mV" color="#78a1bc" timeScale="1ms"/>
+            <Line id="MF 10: Vm" quantity="BasketCells/10/jonasnmBC2Klt/v" scale="1mV" color="#ad0bec" timeScale="1ms"/>
+            <Line id="MF 11: Vm" quantity="BasketCells/11/jonasnmBC2Klt/v" scale="1mV" color="#67d368" timeScale="1ms"/>
+            <Line id="MF 12: Vm" quantity="BasketCells/12/jonasnmBC2Klt/v" scale="1mV" color="#3b70b9" timeScale="1ms"/>
+            <Line id="MF 13: Vm" quantity="BasketCells/13/jonasnmBC2Klt/v" scale="1mV" color="#d515ea" timeScale="1ms"/>
+            <Line id="MF 14: Vm" quantity="BasketCells/14/jonasnmBC2Klt/v" scale="1mV" color="#1b3011" timeScale="1ms"/>
+            <Line id="MF 15: Vm" quantity="BasketCells/15/jonasnmBC2Klt/v" scale="1mV" color="#bdf9b6" timeScale="1ms"/>
+            <Line id="MF 16: Vm" quantity="BasketCells/16/jonasnmBC2Klt/v" scale="1mV" color="#a87773" timeScale="1ms"/>
+            <Line id="MF 17: Vm" quantity="BasketCells/17/jonasnmBC2Klt/v" scale="1mV" color="#8dfa39" timeScale="1ms"/>
+            <Line id="MF 18: Vm" quantity="BasketCells/18/jonasnmBC2Klt/v" scale="1mV" color="#afed34" timeScale="1ms"/>
+            <Line id="MF 19: Vm" quantity="BasketCells/19/jonasnmBC2Klt/v" scale="1mV" color="#8ce109" timeScale="1ms"/>
+            <Line id="MF 20: Vm" quantity="BasketCells/20/jonasnmBC2Klt/v" scale="1mV" color="#fbb47a" timeScale="1ms"/>
+            <Line id="MF 21: Vm" quantity="BasketCells/21/jonasnmBC2Klt/v" scale="1mV" color="#5dd81c" timeScale="1ms"/>
+            <Line id="MF 22: Vm" quantity="BasketCells/22/jonasnmBC2Klt/v" scale="1mV" color="#ebfb59" timeScale="1ms"/>
+            <Line id="MF 23: Vm" quantity="BasketCells/23/jonasnmBC2Klt/v" scale="1mV" color="#df3453" timeScale="1ms"/>
+            <Line id="MF 24: Vm" quantity="BasketCells/24/jonasnmBC2Klt/v" scale="1mV" color="#ebd086" timeScale="1ms"/>
+            <Line id="MF 25: Vm" quantity="BasketCells/25/jonasnmBC2Klt/v" scale="1mV" color="#a05e7f" timeScale="1ms"/>
+            <Line id="MF 26: Vm" quantity="BasketCells/26/jonasnmBC2Klt/v" scale="1mV" color="#072325" timeScale="1ms"/>
+            <Line id="MF 27: Vm" quantity="BasketCells/27/jonasnmBC2Klt/v" scale="1mV" color="#d85257" timeScale="1ms"/>
+            <Line id="MF 28: Vm" quantity="BasketCells/28/jonasnmBC2Klt/v" scale="1mV" color="#08f3ac" timeScale="1ms"/>
+            <Line id="MF 29: Vm" quantity="BasketCells/29/jonasnmBC2Klt/v" scale="1mV" color="#97d4ac" timeScale="1ms"/>
+            <Line id="MF 30: Vm" quantity="BasketCells/30/jonasnmBC2Klt/v" scale="1mV" color="#ec1567" timeScale="1ms"/>
+            <Line id="MF 31: Vm" quantity="BasketCells/31/jonasnmBC2Klt/v" scale="1mV" color="#1136f0" timeScale="1ms"/>
+            <Line id="MF 32: Vm" quantity="BasketCells/32/jonasnmBC2Klt/v" scale="1mV" color="#63935f" timeScale="1ms"/>
+            <Line id="MF 33: Vm" quantity="BasketCells/33/jonasnmBC2Klt/v" scale="1mV" color="#fec314" timeScale="1ms"/>
+            <Line id="MF 34: Vm" quantity="BasketCells/34/jonasnmBC2Klt/v" scale="1mV" color="#7feb38" timeScale="1ms"/>
+            <Line id="MF 35: Vm" quantity="BasketCells/35/jonasnmBC2Klt/v" scale="1mV" color="#d8ba86" timeScale="1ms"/>
+            <Line id="MF 36: Vm" quantity="BasketCells/36/jonasnmBC2Klt/v" scale="1mV" color="#f16dad" timeScale="1ms"/>
+            <Line id="MF 37: Vm" quantity="BasketCells/37/jonasnmBC2Klt/v" scale="1mV" color="#cff4bf" timeScale="1ms"/>
+            <Line id="MF 38: Vm" quantity="BasketCells/38/jonasnmBC2Klt/v" scale="1mV" color="#1b651a" timeScale="1ms"/>
+            <Line id="MF 39: Vm" quantity="BasketCells/39/jonasnmBC2Klt/v" scale="1mV" color="#c14a32" timeScale="1ms"/>
+            <Line id="MF 40: Vm" quantity="BasketCells/40/jonasnmBC2Klt/v" scale="1mV" color="#6c749d" timeScale="1ms"/>
+            <Line id="MF 41: Vm" quantity="BasketCells/41/jonasnmBC2Klt/v" scale="1mV" color="#644404" timeScale="1ms"/>
+            <Line id="MF 42: Vm" quantity="BasketCells/42/jonasnmBC2Klt/v" scale="1mV" color="#ab2bf8" timeScale="1ms"/>
+            <Line id="MF 43: Vm" quantity="BasketCells/43/jonasnmBC2Klt/v" scale="1mV" color="#a70b32" timeScale="1ms"/>
+            <Line id="MF 44: Vm" quantity="BasketCells/44/jonasnmBC2Klt/v" scale="1mV" color="#1bf726" timeScale="1ms"/>
+            <Line id="MF 45: Vm" quantity="BasketCells/45/jonasnmBC2Klt/v" scale="1mV" color="#f5c013" timeScale="1ms"/>
+            <Line id="MF 46: Vm" quantity="BasketCells/46/jonasnmBC2Klt/v" scale="1mV" color="#1b43ba" timeScale="1ms"/>
+            <Line id="MF 47: Vm" quantity="BasketCells/47/jonasnmBC2Klt/v" scale="1mV" color="#eb6774" timeScale="1ms"/>
+            <Line id="MF 48: Vm" quantity="BasketCells/48/jonasnmBC2Klt/v" scale="1mV" color="#8600b7" timeScale="1ms"/>
+            <Line id="MF 49: Vm" quantity="BasketCells/49/jonasnmBC2Klt/v" scale="1mV" color="#1b0b57" timeScale="1ms"/>
+            <Line id="MF 50: Vm" quantity="BasketCells/50/jonasnmBC2Klt/v" scale="1mV" color="#23861b" timeScale="1ms"/>
+            <Line id="MF 51: Vm" quantity="BasketCells/51/jonasnmBC2Klt/v" scale="1mV" color="#8a9c02" timeScale="1ms"/>
+            <Line id="MF 52: Vm" quantity="BasketCells/52/jonasnmBC2Klt/v" scale="1mV" color="#56b019" timeScale="1ms"/>
+            <Line id="MF 53: Vm" quantity="BasketCells/53/jonasnmBC2Klt/v" scale="1mV" color="#e23ee7" timeScale="1ms"/>
+            <Line id="MF 54: Vm" quantity="BasketCells/54/jonasnmBC2Klt/v" scale="1mV" color="#cafe98" timeScale="1ms"/>
+            <Line id="MF 55: Vm" quantity="BasketCells/55/jonasnmBC2Klt/v" scale="1mV" color="#73156b" timeScale="1ms"/>
+            <Line id="MF 56: Vm" quantity="BasketCells/56/jonasnmBC2Klt/v" scale="1mV" color="#62808d" timeScale="1ms"/>
+            <Line id="MF 57: Vm" quantity="BasketCells/57/jonasnmBC2Klt/v" scale="1mV" color="#c597b7" timeScale="1ms"/>
+            <Line id="MF 58: Vm" quantity="BasketCells/58/jonasnmBC2Klt/v" scale="1mV" color="#a28f62" timeScale="1ms"/>
+            <Line id="MF 59: Vm" quantity="BasketCells/59/jonasnmBC2Klt/v" scale="1mV" color="#3a0ab5" timeScale="1ms"/>
+            <Line id="MF 60: Vm" quantity="BasketCells/60/jonasnmBC2Klt/v" scale="1mV" color="#30a506" timeScale="1ms"/>
+            <Line id="MF 61: Vm" quantity="BasketCells/61/jonasnmBC2Klt/v" scale="1mV" color="#564f9d" timeScale="1ms"/>
+            <Line id="MF 62: Vm" quantity="BasketCells/62/jonasnmBC2Klt/v" scale="1mV" color="#cec639" timeScale="1ms"/>
+            <Line id="MF 63: Vm" quantity="BasketCells/63/jonasnmBC2Klt/v" scale="1mV" color="#03e8b0" timeScale="1ms"/>
+            <Line id="MF 64: Vm" quantity="BasketCells/64/jonasnmBC2Klt/v" scale="1mV" color="#4e0138" timeScale="1ms"/>
+            <Line id="MF 65: Vm" quantity="BasketCells/65/jonasnmBC2Klt/v" scale="1mV" color="#82baa7" timeScale="1ms"/>
+            <Line id="MF 66: Vm" quantity="BasketCells/66/jonasnmBC2Klt/v" scale="1mV" color="#d65de0" timeScale="1ms"/>
+            <Line id="MF 67: Vm" quantity="BasketCells/67/jonasnmBC2Klt/v" scale="1mV" color="#a8e94f" timeScale="1ms"/>
+            <Line id="MF 68: Vm" quantity="BasketCells/68/jonasnmBC2Klt/v" scale="1mV" color="#9c60ae" timeScale="1ms"/>
+            <Line id="MF 69: Vm" quantity="BasketCells/69/jonasnmBC2Klt/v" scale="1mV" color="#0d6a59" timeScale="1ms"/>
+            <Line id="MF 70: Vm" quantity="BasketCells/70/jonasnmBC2Klt/v" scale="1mV" color="#3ec54d" timeScale="1ms"/>
+            <Line id="MF 71: Vm" quantity="BasketCells/71/jonasnmBC2Klt/v" scale="1mV" color="#abd357" timeScale="1ms"/>
+            <Line id="MF 72: Vm" quantity="BasketCells/72/jonasnmBC2Klt/v" scale="1mV" color="#16f3e5" timeScale="1ms"/>
+            <Line id="MF 73: Vm" quantity="BasketCells/73/jonasnmBC2Klt/v" scale="1mV" color="#992278" timeScale="1ms"/>
+            <Line id="MF 74: Vm" quantity="BasketCells/74/jonasnmBC2Klt/v" scale="1mV" color="#b862c0" timeScale="1ms"/>
+            <Line id="MF 75: Vm" quantity="BasketCells/75/jonasnmBC2Klt/v" scale="1mV" color="#7ebf8b" timeScale="1ms"/>
+            <Line id="MF 76: Vm" quantity="BasketCells/76/jonasnmBC2Klt/v" scale="1mV" color="#ae0f2e" timeScale="1ms"/>
+            <Line id="MF 77: Vm" quantity="BasketCells/77/jonasnmBC2Klt/v" scale="1mV" color="#159eec" timeScale="1ms"/>
+            <Line id="MF 78: Vm" quantity="BasketCells/78/jonasnmBC2Klt/v" scale="1mV" color="#1e2589" timeScale="1ms"/>
+            <Line id="MF 79: Vm" quantity="BasketCells/79/jonasnmBC2Klt/v" scale="1mV" color="#5fb88c" timeScale="1ms"/>
+            <Line id="MF 80: Vm" quantity="BasketCells/80/jonasnmBC2Klt/v" scale="1mV" color="#d21b9f" timeScale="1ms"/>
+            <Line id="MF 81: Vm" quantity="BasketCells/81/jonasnmBC2Klt/v" scale="1mV" color="#8fbfd2" timeScale="1ms"/>
+            <Line id="MF 82: Vm" quantity="BasketCells/82/jonasnmBC2Klt/v" scale="1mV" color="#7a160c" timeScale="1ms"/>
+            <Line id="MF 83: Vm" quantity="BasketCells/83/jonasnmBC2Klt/v" scale="1mV" color="#b1028d" timeScale="1ms"/>
+            <Line id="MF 84: Vm" quantity="BasketCells/84/jonasnmBC2Klt/v" scale="1mV" color="#449746" timeScale="1ms"/>
+            <Line id="MF 85: Vm" quantity="BasketCells/85/jonasnmBC2Klt/v" scale="1mV" color="#0dd5bd" timeScale="1ms"/>
+            <Line id="MF 86: Vm" quantity="BasketCells/86/jonasnmBC2Klt/v" scale="1mV" color="#dc64ff" timeScale="1ms"/>
+            <Line id="MF 87: Vm" quantity="BasketCells/87/jonasnmBC2Klt/v" scale="1mV" color="#fd9bde" timeScale="1ms"/>
+            <Line id="MF 88: Vm" quantity="BasketCells/88/jonasnmBC2Klt/v" scale="1mV" color="#2766b6" timeScale="1ms"/>
+            <Line id="MF 89: Vm" quantity="BasketCells/89/jonasnmBC2Klt/v" scale="1mV" color="#6cb736" timeScale="1ms"/>
+            <Line id="MF 90: Vm" quantity="BasketCells/90/jonasnmBC2Klt/v" scale="1mV" color="#d70508" timeScale="1ms"/>
+            <Line id="MF 91: Vm" quantity="BasketCells/91/jonasnmBC2Klt/v" scale="1mV" color="#51a149" timeScale="1ms"/>
+            <Line id="MF 92: Vm" quantity="BasketCells/92/jonasnmBC2Klt/v" scale="1mV" color="#3f7700" timeScale="1ms"/>
+            <Line id="MF 93: Vm" quantity="BasketCells/93/jonasnmBC2Klt/v" scale="1mV" color="#66f862" timeScale="1ms"/>
+            <Line id="MF 94: Vm" quantity="BasketCells/94/jonasnmBC2Klt/v" scale="1mV" color="#dd8f82" timeScale="1ms"/>
+            <Line id="MF 95: Vm" quantity="BasketCells/95/jonasnmBC2Klt/v" scale="1mV" color="#b654dc" timeScale="1ms"/>
+            <Line id="MF 96: Vm" quantity="BasketCells/96/jonasnmBC2Klt/v" scale="1mV" color="#60cff8" timeScale="1ms"/>
+            <Line id="MF 97: Vm" quantity="BasketCells/97/jonasnmBC2Klt/v" scale="1mV" color="#c19415" timeScale="1ms"/>
+            <Line id="MF 98: Vm" quantity="BasketCells/98/jonasnmBC2Klt/v" scale="1mV" color="#5b0267" timeScale="1ms"/>
+            <Line id="MF 99: Vm" quantity="BasketCells/99/jonasnmBC2Klt/v" scale="1mV" color="#266dca" timeScale="1ms"/>
+            <Line id="MF 100: Vm" quantity="BasketCells/100/jonasnmBC2Klt/v" scale="1mV" color="#da6b18" timeScale="1ms"/>
+            <Line id="MF 101: Vm" quantity="BasketCells/101/jonasnmBC2Klt/v" scale="1mV" color="#21b764" timeScale="1ms"/>
+            <Line id="MF 102: Vm" quantity="BasketCells/102/jonasnmBC2Klt/v" scale="1mV" color="#89be46" timeScale="1ms"/>
+            <Line id="MF 103: Vm" quantity="BasketCells/103/jonasnmBC2Klt/v" scale="1mV" color="#d50fb1" timeScale="1ms"/>
+            <Line id="MF 104: Vm" quantity="BasketCells/104/jonasnmBC2Klt/v" scale="1mV" color="#c37383" timeScale="1ms"/>
+            <Line id="MF 105: Vm" quantity="BasketCells/105/jonasnmBC2Klt/v" scale="1mV" color="#60dc68" timeScale="1ms"/>
+            <Line id="MF 106: Vm" quantity="BasketCells/106/jonasnmBC2Klt/v" scale="1mV" color="#73cc54" timeScale="1ms"/>
+            <Line id="MF 107: Vm" quantity="BasketCells/107/jonasnmBC2Klt/v" scale="1mV" color="#9aae3c" timeScale="1ms"/>
+            <Line id="MF 108: Vm" quantity="BasketCells/108/jonasnmBC2Klt/v" scale="1mV" color="#307872" timeScale="1ms"/>
+            <Line id="MF 109: Vm" quantity="BasketCells/109/jonasnmBC2Klt/v" scale="1mV" color="#6ffc5b" timeScale="1ms"/>
+            <Line id="MF 110: Vm" quantity="BasketCells/110/jonasnmBC2Klt/v" scale="1mV" color="#1e09a6" timeScale="1ms"/>
+            <Line id="MF 111: Vm" quantity="BasketCells/111/jonasnmBC2Klt/v" scale="1mV" color="#d402c2" timeScale="1ms"/>
+            <Line id="MF 112: Vm" quantity="BasketCells/112/jonasnmBC2Klt/v" scale="1mV" color="#ca9777" timeScale="1ms"/>
+            <Line id="MF 113: Vm" quantity="BasketCells/113/jonasnmBC2Klt/v" scale="1mV" color="#5f6ccb" timeScale="1ms"/>
+            <Line id="MF 114: Vm" quantity="BasketCells/114/jonasnmBC2Klt/v" scale="1mV" color="#bc1af4" timeScale="1ms"/>
+            <Line id="MF 115: Vm" quantity="BasketCells/115/jonasnmBC2Klt/v" scale="1mV" color="#e3cd1a" timeScale="1ms"/>
+            <Line id="MF 116: Vm" quantity="BasketCells/116/jonasnmBC2Klt/v" scale="1mV" color="#83bca0" timeScale="1ms"/>
+            <Line id="MF 117: Vm" quantity="BasketCells/117/jonasnmBC2Klt/v" scale="1mV" color="#73e331" timeScale="1ms"/>
+            <Line id="MF 118: Vm" quantity="BasketCells/118/jonasnmBC2Klt/v" scale="1mV" color="#ffcc33" timeScale="1ms"/>
+            <Line id="MF 119: Vm" quantity="BasketCells/119/jonasnmBC2Klt/v" scale="1mV" color="#c5fa8e" timeScale="1ms"/>
+            <Line id="MF 120: Vm" quantity="BasketCells/120/jonasnmBC2Klt/v" scale="1mV" color="#68f9f8" timeScale="1ms"/>
+            <Line id="MF 121: Vm" quantity="BasketCells/121/jonasnmBC2Klt/v" scale="1mV" color="#8b4115" timeScale="1ms"/>
+            <Line id="MF 122: Vm" quantity="BasketCells/122/jonasnmBC2Klt/v" scale="1mV" color="#b832f0" timeScale="1ms"/>
+            <Line id="MF 123: Vm" quantity="BasketCells/123/jonasnmBC2Klt/v" scale="1mV" color="#978cb9" timeScale="1ms"/>
+            <Line id="MF 124: Vm" quantity="BasketCells/124/jonasnmBC2Klt/v" scale="1mV" color="#22d68e" timeScale="1ms"/>
+            <Line id="MF 125: Vm" quantity="BasketCells/125/jonasnmBC2Klt/v" scale="1mV" color="#54220f" timeScale="1ms"/>
+            <Line id="MF 126: Vm" quantity="BasketCells/126/jonasnmBC2Klt/v" scale="1mV" color="#aa48b1" timeScale="1ms"/>
+            <Line id="MF 127: Vm" quantity="BasketCells/127/jonasnmBC2Klt/v" scale="1mV" color="#05c2a4" timeScale="1ms"/>
+            <Line id="MF 128: Vm" quantity="BasketCells/128/jonasnmBC2Klt/v" scale="1mV" color="#000275" timeScale="1ms"/>
+            <Line id="MF 129: Vm" quantity="BasketCells/129/jonasnmBC2Klt/v" scale="1mV" color="#f8ff3e" timeScale="1ms"/>
+            <Line id="MF 130: Vm" quantity="BasketCells/130/jonasnmBC2Klt/v" scale="1mV" color="#4fd0a7" timeScale="1ms"/>
+            <Line id="MF 131: Vm" quantity="BasketCells/131/jonasnmBC2Klt/v" scale="1mV" color="#09425b" timeScale="1ms"/>
+            <Line id="MF 132: Vm" quantity="BasketCells/132/jonasnmBC2Klt/v" scale="1mV" color="#d04433" timeScale="1ms"/>
+            <Line id="MF 133: Vm" quantity="BasketCells/133/jonasnmBC2Klt/v" scale="1mV" color="#8a7a95" timeScale="1ms"/>
+            <Line id="MF 134: Vm" quantity="BasketCells/134/jonasnmBC2Klt/v" scale="1mV" color="#3e571a" timeScale="1ms"/>
+            <Line id="MF 135: Vm" quantity="BasketCells/135/jonasnmBC2Klt/v" scale="1mV" color="#a91855" timeScale="1ms"/>
+            <Line id="MF 136: Vm" quantity="BasketCells/136/jonasnmBC2Klt/v" scale="1mV" color="#3ba2fd" timeScale="1ms"/>
+            <Line id="MF 137: Vm" quantity="BasketCells/137/jonasnmBC2Klt/v" scale="1mV" color="#77abf5" timeScale="1ms"/>
+            <Line id="MF 138: Vm" quantity="BasketCells/138/jonasnmBC2Klt/v" scale="1mV" color="#ea9c35" timeScale="1ms"/>
+            <Line id="MF 139: Vm" quantity="BasketCells/139/jonasnmBC2Klt/v" scale="1mV" color="#c1313a" timeScale="1ms"/>
+            <Line id="MF 140: Vm" quantity="BasketCells/140/jonasnmBC2Klt/v" scale="1mV" color="#f7da66" timeScale="1ms"/>
+            <Line id="MF 141: Vm" quantity="BasketCells/141/jonasnmBC2Klt/v" scale="1mV" color="#bdaea0" timeScale="1ms"/>
+            <Line id="MF 142: Vm" quantity="BasketCells/142/jonasnmBC2Klt/v" scale="1mV" color="#698cd5" timeScale="1ms"/>
+            <Line id="MF 143: Vm" quantity="BasketCells/143/jonasnmBC2Klt/v" scale="1mV" color="#1022b0" timeScale="1ms"/>
+            <Line id="MF 144: Vm" quantity="BasketCells/144/jonasnmBC2Klt/v" scale="1mV" color="#345b34" timeScale="1ms"/>
+            <Line id="MF 145: Vm" quantity="BasketCells/145/jonasnmBC2Klt/v" scale="1mV" color="#351471" timeScale="1ms"/>
+            <Line id="MF 146: Vm" quantity="BasketCells/146/jonasnmBC2Klt/v" scale="1mV" color="#5d9853" timeScale="1ms"/>
+            <Line id="MF 147: Vm" quantity="BasketCells/147/jonasnmBC2Klt/v" scale="1mV" color="#8f3bd3" timeScale="1ms"/>
+            <Line id="MF 148: Vm" quantity="BasketCells/148/jonasnmBC2Klt/v" scale="1mV" color="#bc030f" timeScale="1ms"/>
+            <Line id="MF 149: Vm" quantity="BasketCells/149/jonasnmBC2Klt/v" scale="1mV" color="#728066" timeScale="1ms"/>
+            <Line id="MF 150: Vm" quantity="BasketCells/150/jonasnmBC2Klt/v" scale="1mV" color="#6bae72" timeScale="1ms"/>
+            <Line id="MF 151: Vm" quantity="BasketCells/151/jonasnmBC2Klt/v" scale="1mV" color="#8cc0da" timeScale="1ms"/>
+            <Line id="MF 152: Vm" quantity="BasketCells/152/jonasnmBC2Klt/v" scale="1mV" color="#01c656" timeScale="1ms"/>
+            <Line id="MF 153: Vm" quantity="BasketCells/153/jonasnmBC2Klt/v" scale="1mV" color="#ebe0ca" timeScale="1ms"/>
+            <Line id="MF 154: Vm" quantity="BasketCells/154/jonasnmBC2Klt/v" scale="1mV" color="#a03f2f" timeScale="1ms"/>
+            <Line id="MF 155: Vm" quantity="BasketCells/155/jonasnmBC2Klt/v" scale="1mV" color="#d52d92" timeScale="1ms"/>
+            <Line id="MF 156: Vm" quantity="BasketCells/156/jonasnmBC2Klt/v" scale="1mV" color="#4bd2ea" timeScale="1ms"/>
+            <Line id="MF 157: Vm" quantity="BasketCells/157/jonasnmBC2Klt/v" scale="1mV" color="#7a0bde" timeScale="1ms"/>
+            <Line id="MF 158: Vm" quantity="BasketCells/158/jonasnmBC2Klt/v" scale="1mV" color="#a19578" timeScale="1ms"/>
+            <Line id="MF 159: Vm" quantity="BasketCells/159/jonasnmBC2Klt/v" scale="1mV" color="#150242" timeScale="1ms"/>
+            <Line id="MF 160: Vm" quantity="BasketCells/160/jonasnmBC2Klt/v" scale="1mV" color="#d4381c" timeScale="1ms"/>
+            <Line id="MF 161: Vm" quantity="BasketCells/161/jonasnmBC2Klt/v" scale="1mV" color="#4e6231" timeScale="1ms"/>
+            <Line id="MF 162: Vm" quantity="BasketCells/162/jonasnmBC2Klt/v" scale="1mV" color="#9dd78b" timeScale="1ms"/>
+            <Line id="MF 163: Vm" quantity="BasketCells/163/jonasnmBC2Klt/v" scale="1mV" color="#2edf66" timeScale="1ms"/>
+            <Line id="MF 164: Vm" quantity="BasketCells/164/jonasnmBC2Klt/v" scale="1mV" color="#475874" timeScale="1ms"/>
+            <Line id="MF 165: Vm" quantity="BasketCells/165/jonasnmBC2Klt/v" scale="1mV" color="#e557df" timeScale="1ms"/>
+            <Line id="MF 166: Vm" quantity="BasketCells/166/jonasnmBC2Klt/v" scale="1mV" color="#9c0ccc" timeScale="1ms"/>
+            <Line id="MF 167: Vm" quantity="BasketCells/167/jonasnmBC2Klt/v" scale="1mV" color="#35c8dd" timeScale="1ms"/>
+            <Line id="MF 168: Vm" quantity="BasketCells/168/jonasnmBC2Klt/v" scale="1mV" color="#5422fe" timeScale="1ms"/>
+            <Line id="MF 169: Vm" quantity="BasketCells/169/jonasnmBC2Klt/v" scale="1mV" color="#03515e" timeScale="1ms"/>
+            <Line id="MF 170: Vm" quantity="BasketCells/170/jonasnmBC2Klt/v" scale="1mV" color="#5abfab" timeScale="1ms"/>
+            <Line id="MF 171: Vm" quantity="BasketCells/171/jonasnmBC2Klt/v" scale="1mV" color="#fac13e" timeScale="1ms"/>
+            <Line id="MF 172: Vm" quantity="BasketCells/172/jonasnmBC2Klt/v" scale="1mV" color="#5babb2" timeScale="1ms"/>
+            <Line id="MF 173: Vm" quantity="BasketCells/173/jonasnmBC2Klt/v" scale="1mV" color="#85a05a" timeScale="1ms"/>
+            <Line id="MF 174: Vm" quantity="BasketCells/174/jonasnmBC2Klt/v" scale="1mV" color="#8289cf" timeScale="1ms"/>
+            <Line id="MF 175: Vm" quantity="BasketCells/175/jonasnmBC2Klt/v" scale="1mV" color="#0cf32a" timeScale="1ms"/>
+            <Line id="MF 176: Vm" quantity="BasketCells/176/jonasnmBC2Klt/v" scale="1mV" color="#c88e0d" timeScale="1ms"/>
+            <Line id="MF 177: Vm" quantity="BasketCells/177/jonasnmBC2Klt/v" scale="1mV" color="#499d78" timeScale="1ms"/>
+            <Line id="MF 178: Vm" quantity="BasketCells/178/jonasnmBC2Klt/v" scale="1mV" color="#bd1771" timeScale="1ms"/>
+            <Line id="MF 179: Vm" quantity="BasketCells/179/jonasnmBC2Klt/v" scale="1mV" color="#390131" timeScale="1ms"/>
+            <Line id="MF 180: Vm" quantity="BasketCells/180/jonasnmBC2Klt/v" scale="1mV" color="#86e12a" timeScale="1ms"/>
+            <Line id="MF 181: Vm" quantity="BasketCells/181/jonasnmBC2Klt/v" scale="1mV" color="#529d89" timeScale="1ms"/>
+            <Line id="MF 182: Vm" quantity="BasketCells/182/jonasnmBC2Klt/v" scale="1mV" color="#5744b9" timeScale="1ms"/>
+            <Line id="MF 183: Vm" quantity="BasketCells/183/jonasnmBC2Klt/v" scale="1mV" color="#723e0e" timeScale="1ms"/>
+            <Line id="MF 184: Vm" quantity="BasketCells/184/jonasnmBC2Klt/v" scale="1mV" color="#cdc26e" timeScale="1ms"/>
+            <Line id="MF 185: Vm" quantity="BasketCells/185/jonasnmBC2Klt/v" scale="1mV" color="#2b227d" timeScale="1ms"/>
+            <Line id="MF 186: Vm" quantity="BasketCells/186/jonasnmBC2Klt/v" scale="1mV" color="#605f49" timeScale="1ms"/>
+            <Line id="MF 187: Vm" quantity="BasketCells/187/jonasnmBC2Klt/v" scale="1mV" color="#13fe40" timeScale="1ms"/>
+            <Line id="MF 188: Vm" quantity="BasketCells/188/jonasnmBC2Klt/v" scale="1mV" color="#0cf922" timeScale="1ms"/>
+            <Line id="MF 189: Vm" quantity="BasketCells/189/jonasnmBC2Klt/v" scale="1mV" color="#4778cc" timeScale="1ms"/>
+            <Line id="MF 190: Vm" quantity="BasketCells/190/jonasnmBC2Klt/v" scale="1mV" color="#6d9abf" timeScale="1ms"/>
+            <Line id="MF 191: Vm" quantity="BasketCells/191/jonasnmBC2Klt/v" scale="1mV" color="#177e20" timeScale="1ms"/>
+            <Line id="MF 192: Vm" quantity="BasketCells/192/jonasnmBC2Klt/v" scale="1mV" color="#fb20d2" timeScale="1ms"/>
+            <Line id="MF 193: Vm" quantity="BasketCells/193/jonasnmBC2Klt/v" scale="1mV" color="#c66b69" timeScale="1ms"/>
+            <Line id="MF 194: Vm" quantity="BasketCells/194/jonasnmBC2Klt/v" scale="1mV" color="#ec9393" timeScale="1ms"/>
+            <Line id="MF 195: Vm" quantity="BasketCells/195/jonasnmBC2Klt/v" scale="1mV" color="#f7ef28" timeScale="1ms"/>
+            <Line id="MF 196: Vm" quantity="BasketCells/196/jonasnmBC2Klt/v" scale="1mV" color="#57b03b" timeScale="1ms"/>
+            <Line id="MF 197: Vm" quantity="BasketCells/197/jonasnmBC2Klt/v" scale="1mV" color="#0d72fb" timeScale="1ms"/>
+            <Line id="MF 198: Vm" quantity="BasketCells/198/jonasnmBC2Klt/v" scale="1mV" color="#b514a1" timeScale="1ms"/>
+            <Line id="MF 199: Vm" quantity="BasketCells/199/jonasnmBC2Klt/v" scale="1mV" color="#8e7f0f" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file_bc" fileName="N200w2.0gjw0.0rev-75.0ts1.8pfsfreq50pfsdisp0.0ampaw2.0numContacts6numContactsPFS100jonasnmBC2KltPFSAPI.dat">
+            <OutputColumn id="v_0" quantity="BasketCells/0/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_1" quantity="BasketCells/1/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_2" quantity="BasketCells/2/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_3" quantity="BasketCells/3/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_4" quantity="BasketCells/4/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_5" quantity="BasketCells/5/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_6" quantity="BasketCells/6/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_7" quantity="BasketCells/7/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_8" quantity="BasketCells/8/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_9" quantity="BasketCells/9/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_10" quantity="BasketCells/10/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_11" quantity="BasketCells/11/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_12" quantity="BasketCells/12/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_13" quantity="BasketCells/13/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_14" quantity="BasketCells/14/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_15" quantity="BasketCells/15/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_16" quantity="BasketCells/16/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_17" quantity="BasketCells/17/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_18" quantity="BasketCells/18/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_19" quantity="BasketCells/19/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_20" quantity="BasketCells/20/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_21" quantity="BasketCells/21/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_22" quantity="BasketCells/22/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_23" quantity="BasketCells/23/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_24" quantity="BasketCells/24/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_25" quantity="BasketCells/25/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_26" quantity="BasketCells/26/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_27" quantity="BasketCells/27/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_28" quantity="BasketCells/28/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_29" quantity="BasketCells/29/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_30" quantity="BasketCells/30/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_31" quantity="BasketCells/31/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_32" quantity="BasketCells/32/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_33" quantity="BasketCells/33/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_34" quantity="BasketCells/34/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_35" quantity="BasketCells/35/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_36" quantity="BasketCells/36/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_37" quantity="BasketCells/37/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_38" quantity="BasketCells/38/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_39" quantity="BasketCells/39/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_40" quantity="BasketCells/40/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_41" quantity="BasketCells/41/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_42" quantity="BasketCells/42/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_43" quantity="BasketCells/43/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_44" quantity="BasketCells/44/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_45" quantity="BasketCells/45/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_46" quantity="BasketCells/46/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_47" quantity="BasketCells/47/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_48" quantity="BasketCells/48/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_49" quantity="BasketCells/49/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_50" quantity="BasketCells/50/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_51" quantity="BasketCells/51/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_52" quantity="BasketCells/52/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_53" quantity="BasketCells/53/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_54" quantity="BasketCells/54/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_55" quantity="BasketCells/55/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_56" quantity="BasketCells/56/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_57" quantity="BasketCells/57/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_58" quantity="BasketCells/58/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_59" quantity="BasketCells/59/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_60" quantity="BasketCells/60/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_61" quantity="BasketCells/61/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_62" quantity="BasketCells/62/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_63" quantity="BasketCells/63/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_64" quantity="BasketCells/64/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_65" quantity="BasketCells/65/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_66" quantity="BasketCells/66/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_67" quantity="BasketCells/67/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_68" quantity="BasketCells/68/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_69" quantity="BasketCells/69/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_70" quantity="BasketCells/70/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_71" quantity="BasketCells/71/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_72" quantity="BasketCells/72/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_73" quantity="BasketCells/73/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_74" quantity="BasketCells/74/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_75" quantity="BasketCells/75/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_76" quantity="BasketCells/76/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_77" quantity="BasketCells/77/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_78" quantity="BasketCells/78/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_79" quantity="BasketCells/79/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_80" quantity="BasketCells/80/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_81" quantity="BasketCells/81/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_82" quantity="BasketCells/82/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_83" quantity="BasketCells/83/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_84" quantity="BasketCells/84/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_85" quantity="BasketCells/85/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_86" quantity="BasketCells/86/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_87" quantity="BasketCells/87/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_88" quantity="BasketCells/88/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_89" quantity="BasketCells/89/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_90" quantity="BasketCells/90/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_91" quantity="BasketCells/91/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_92" quantity="BasketCells/92/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_93" quantity="BasketCells/93/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_94" quantity="BasketCells/94/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_95" quantity="BasketCells/95/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_96" quantity="BasketCells/96/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_97" quantity="BasketCells/97/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_98" quantity="BasketCells/98/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_99" quantity="BasketCells/99/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_100" quantity="BasketCells/100/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_101" quantity="BasketCells/101/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_102" quantity="BasketCells/102/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_103" quantity="BasketCells/103/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_104" quantity="BasketCells/104/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_105" quantity="BasketCells/105/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_106" quantity="BasketCells/106/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_107" quantity="BasketCells/107/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_108" quantity="BasketCells/108/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_109" quantity="BasketCells/109/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_110" quantity="BasketCells/110/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_111" quantity="BasketCells/111/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_112" quantity="BasketCells/112/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_113" quantity="BasketCells/113/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_114" quantity="BasketCells/114/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_115" quantity="BasketCells/115/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_116" quantity="BasketCells/116/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_117" quantity="BasketCells/117/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_118" quantity="BasketCells/118/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_119" quantity="BasketCells/119/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_120" quantity="BasketCells/120/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_121" quantity="BasketCells/121/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_122" quantity="BasketCells/122/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_123" quantity="BasketCells/123/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_124" quantity="BasketCells/124/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_125" quantity="BasketCells/125/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_126" quantity="BasketCells/126/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_127" quantity="BasketCells/127/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_128" quantity="BasketCells/128/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_129" quantity="BasketCells/129/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_130" quantity="BasketCells/130/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_131" quantity="BasketCells/131/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_132" quantity="BasketCells/132/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_133" quantity="BasketCells/133/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_134" quantity="BasketCells/134/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_135" quantity="BasketCells/135/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_136" quantity="BasketCells/136/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_137" quantity="BasketCells/137/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_138" quantity="BasketCells/138/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_139" quantity="BasketCells/139/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_140" quantity="BasketCells/140/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_141" quantity="BasketCells/141/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_142" quantity="BasketCells/142/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_143" quantity="BasketCells/143/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_144" quantity="BasketCells/144/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_145" quantity="BasketCells/145/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_146" quantity="BasketCells/146/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_147" quantity="BasketCells/147/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_148" quantity="BasketCells/148/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_149" quantity="BasketCells/149/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_150" quantity="BasketCells/150/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_151" quantity="BasketCells/151/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_152" quantity="BasketCells/152/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_153" quantity="BasketCells/153/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_154" quantity="BasketCells/154/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_155" quantity="BasketCells/155/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_156" quantity="BasketCells/156/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_157" quantity="BasketCells/157/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_158" quantity="BasketCells/158/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_159" quantity="BasketCells/159/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_160" quantity="BasketCells/160/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_161" quantity="BasketCells/161/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_162" quantity="BasketCells/162/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_163" quantity="BasketCells/163/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_164" quantity="BasketCells/164/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_165" quantity="BasketCells/165/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_166" quantity="BasketCells/166/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_167" quantity="BasketCells/167/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_168" quantity="BasketCells/168/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_169" quantity="BasketCells/169/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_170" quantity="BasketCells/170/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_171" quantity="BasketCells/171/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_172" quantity="BasketCells/172/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_173" quantity="BasketCells/173/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_174" quantity="BasketCells/174/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_175" quantity="BasketCells/175/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_176" quantity="BasketCells/176/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_177" quantity="BasketCells/177/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_178" quantity="BasketCells/178/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_179" quantity="BasketCells/179/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_180" quantity="BasketCells/180/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_181" quantity="BasketCells/181/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_182" quantity="BasketCells/182/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_183" quantity="BasketCells/183/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_184" quantity="BasketCells/184/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_185" quantity="BasketCells/185/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_186" quantity="BasketCells/186/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_187" quantity="BasketCells/187/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_188" quantity="BasketCells/188/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_189" quantity="BasketCells/189/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_190" quantity="BasketCells/190/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_191" quantity="BasketCells/191/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_192" quantity="BasketCells/192/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_193" quantity="BasketCells/193/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_194" quantity="BasketCells/194/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_195" quantity="BasketCells/195/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_196" quantity="BasketCells/196/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_197" quantity="BasketCells/197/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_198" quantity="BasketCells/198/jonasnmBC2Klt/v"/> 
+            <OutputColumn id="v_199" quantity="BasketCells/199/jonasnmBC2Klt/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

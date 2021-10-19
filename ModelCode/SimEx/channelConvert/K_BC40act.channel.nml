@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="K_BC40act">
+
+    <ionChannel id="K_BC40act" conductance="10pS" type="ionChannelHH" species="non_specific">
+
+        <notes>adapted from: 
+	"Cerebellum Golgi Cell Model
+        KDr channel
+	Gutfreund parametrization
+   
+	Author: A. Fontana
+	Last revised: 12.12.98"
+	
+	to match K dynamics as in net_hh_w.mod by I. Vida, Nov 2000	
+	adapted by: Birgit Kriener
+	Last revised: 13.2.2017</notes>
+                
+
+        <gate id="n" type="gateHHrates" instances="4">
+            <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="6.3 degC"/>
+            <forwardRate type="HHExpLinearRate" rate="0.5 per_ms" scale="10mV" midpoint="-20mV"/>
+            <reverseRate type="HHExpRate" rate="0.625per_ms" scale="-40mV" midpoint="-30mV"/>
+        </gate>
+                            
+    </ionChannel>
+
+</neuroml>

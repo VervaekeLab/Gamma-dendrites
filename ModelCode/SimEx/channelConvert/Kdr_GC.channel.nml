@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Kdr_GC">
+
+    <notes>ChannelML file containing a single Channel description</notes>
+
+    <ionChannel id="Kdr_GC" conductance="0.015pS" type="ionChannelHH" species="k">
+
+        <notes>Delayed rectifier K conductance from Mitral cell model. Comment from original mod file implementation:
+        K-DR current for Mitral Cells from Wang et al (1996)
+        M.Migliore Jan. 2002</notes>
+                
+        
+        <gate id="m" type="gateHHratesTauInf" instances="1">
+            <q10Settings type="q10ExpTemp" q10Factor="1" experimentalTemp="24 degC"/>
+            <forwardRate type="kdrmt_m_alpha_rate"/>
+            <reverseRate type="kdrmt_m_beta_rate"/>
+            <timeCourse type="kdrmt_m_tau_tau"/>
+            <steadyState type="kdrmt_m_inf_inf"/>
+        </gate>
+                            
+    </ionChannel>
+
+    <ComponentType name="kdrmt_m_alpha_rate" extends="baseVoltageDepRate">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <!--Note: this parameter (zetam) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="zetam" dimension="none" value="-0.12455943833608488"/>
+        <!--Note: this parameter (vhalfm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="vhalfm" dimension="none" value="26"/>
+        <!--Note: this parameter (gmm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="gmm" dimension="none" value="1"/>
+        <!--Note: this parameter (a0m) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="a0m" dimension="none" value="0.02"/>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="Vhalfm" dimension="none" value="vhalfm"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="((exp ( zetam * (V - Vhalfm)) )) / TIME_SCALE"/>
+        </Dynamics>
+
+    </ComponentType>
+
+    <ComponentType name="kdrmt_m_beta_rate" extends="baseVoltageDepRate">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+        <!--Note: this parameter (zetam) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="zetam" dimension="none" value="-0.12455943833608488"/>
+        <!--Note: this parameter (vhalfm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="vhalfm" dimension="none" value="26"/>
+        <!--Note: this parameter (gmm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="gmm" dimension="none" value="0.7"/>
+        <!--Note: this parameter (a0m) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="a0m" dimension="none" value="0.02"/>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="Vhalfm" dimension="none" value="vhalfm"/>
+            <DerivedVariable name="r" exposure="r" dimension="per_time" value="((exp ( zetam * gmm * (V - Vhalfm)) )) / TIME_SCALE"/>
+        </Dynamics>
+
+    </ComponentType>
+
+    <ComponentType name="kdrmt_m_tau_tau" extends="baseVoltageDepTime">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+         <!--Note: this parameter (zetam) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="zetam" dimension="none" value="-0.12455943833608488"/>
+        <!--Note: this parameter (vhalfm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="vhalfm" dimension="none" value="26"/>
+        <!--Note: this parameter (gmm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="gmm" dimension="none" value="1"/>
+        <!--Note: this parameter (a0m) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="a0m" dimension="none" value="0.02"/>
+        <!--Note: this parameter (nmax) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="nmax" dimension="none" value="2"/>
+
+        <Requirement name="alpha" dimension="per_time"/>
+        <Requirement name="beta" dimension="per_time"/>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="Vhalfm" dimension="none" value="vhalfm"/>
+            <DerivedVariable name="ALPHA" dimension="none" value="alpha * TIME_SCALE"/>
+            <DerivedVariable name="BETA" dimension="none" value="beta * TIME_SCALE"/>
+            <!--DerivedVariable name="t" exposure="t" dimension="time" value="(BETA / ( a0m * (1 + ALPHA))) * TIME_SCALE"/-->
+            <ConditionalDerivedVariable name="t" exposure="t" dimension="time">
+                <Case condition="(BETA / ( a0m * (1 + ALPHA))) .lt. 2" value="nmax* TIME_SCALE"/>
+                <Case value="(BETA / ( a0m * (1 + ALPHA))) * TIME_SCALE"/>
+            </ConditionalDerivedVariable>	
+        </Dynamics>
+
+    </ComponentType>
+
+    <ComponentType name="kdrmt_m_inf_inf" extends="baseVoltageDepVariable">
+        <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
+        <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
+         <!--Note: this parameter (zetam) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="zetam" dimension="none" value="-0.12455943833608488"/>
+        <!--Note: this parameter (vhalfm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="vhalfm" dimension="none" value="26"/>
+        <!--Note: this parameter (gmm) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="gmm" dimension="none" value="1"/>
+        <!--Note: this parameter (a0m) should ideally be defined only once within the ionChannel! Work in progress...--><Constant name="a0m" dimension="none" value="0.02"/>
+        <Requirement name="alpha" dimension="per_time"/>
+
+        <Dynamics>
+            <DerivedVariable name="V" dimension="none" value="v / VOLT_SCALE"/>
+            <DerivedVariable name="Vhalfm" dimension="none" value="vhalfm"/>
+	    <DerivedVariable name="ALPHA" dimension="none" value="alpha * TIME_SCALE"/>
+            <DerivedVariable name="x" exposure="x" dimension="none" value="1/(1 + ALPHA)"/>
+        </Dynamics>
+
+    </ComponentType>
+
+</neuroml>

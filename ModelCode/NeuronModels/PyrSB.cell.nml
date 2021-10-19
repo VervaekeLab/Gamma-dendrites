@@ -1,0 +1,39 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="PyrSB">
+    <include href="pas.channel.nml"></include>
+    <include href="na3n_GC.channel.nml"></include>
+    <include href="Kdr_GC.channel.nml"></include>
+    <cell id="PyrSB">
+        <notes>Cell: Cell0 exported from NEURON ModelView</notes>
+        <morphology id="morphology_Golgi">
+            <segment id="0" name="Soma">
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="5.64189583548"/>
+                <distal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="5.64189583548"/>
+            </segment>
+           
+            <segmentGroup neuroLexId="sao864921383" id="Soma">
+                <member segment="0"/>
+            </segmentGroup>
+            
+            <segmentGroup id="all">
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0043025" id="soma_group">
+                <include segmentGroup="Soma"/>
+            </segmentGroup>
+            
+        </morphology>
+        <biophysicalProperties id="biophys">
+            <membraneProperties>
+                <channelDensity id="pas_chan_soma" segmentGroup="soma_group" ionChannel="pas" condDensity="0.02632 mS_per_cm2" erev="-75.0 mV" ion="non_specific"/>
+               	<channelDensity id="kdr_chan_soma" ionChannel="Kdr_GC" condDensity="0.015 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+                <channelDensity id="na3n_chan_soma" ionChannel="na3n_GC" condDensity="0.01 S_per_cm2" erev="55.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+                <spikeThresh value="-20.0 mV"/>
+                <specificCapacitance value="1.01 uF_per_cm2"/>
+                <initMembPotential value="-75.0 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="194.0 ohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>
